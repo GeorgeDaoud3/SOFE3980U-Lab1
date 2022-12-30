@@ -6,6 +6,11 @@ package com.ontariotechu.sofe3980U;
  */
 public class App 
 {
+	/**
+	* Main program: The entry point of the program. It creates two binary variables, adds them and print the result.
+	*
+	* @param args: not used
+	*/
     public static void main( String[] args )
     {
 		Binary binary1=new Binary("00010001000");

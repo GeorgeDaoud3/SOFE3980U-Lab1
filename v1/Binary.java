@@ -7,19 +7,17 @@ package com.ontariotechu.sofe3980U;
 public class Binary
 {
 	private String number="0";  // string containing the binary value '0' or '1'
-	private boolean Err=true;  // indicator if the binary value is invalid
 	/**
 	* A constructor that generates a binary object.
 	*
-	* @param number a String of the binary values. It should conatins only zeros or ones with any length and order. Trailing zeros will be excluded and empty string will be considered as zero.
+	* @param number a String of the binary values. It should conatins only zeros or ones with any length and order. otherwise, the value of "0" will be stored.   Trailing zeros will be excluded and empty string will be considered as zero.
 	*/
     public Binary(String number) {
-		Err=false;    //default value if no error detection
 		for (int i = 0; i < number.length(); i++) {
 			// check each character if it's not 0 or 1
 			char ch=number.charAt(i);
 			if(ch!='0' && ch!='1') {
-				Err=true;
+				number="0"; // if not store "0" and end the function
 				return;
 			}
 		}
@@ -36,38 +34,23 @@ public class Binary
 		}
     }
 	/**
-	* Return the status of the binary variable
-	*
-	* @return A false is returned if the binary value is invalid
-	*/
-	public boolean isGood() {
-		return (!this.Err);
-	}
-	/**
 	* Return the binary value of the variable
 	*
-	* @return the binary value in a string format. "0" if the status of the variable is not good.
+	* @return the binary value in a string format.
 	*/
 	public String getValue()
 	{
 		return this.number;
 	}
 	/**
-	* Adding two binary variables
+	* Adding two binary variables. For more information, visit <a href="https://www.wikihow.com/Add-Binary-Numbers"> Add-Binary-Numbers </a>.
 	*
 	* @param num1 The first addend object
 	* @param num2 The second addend object
-	* @return A binary variable with a value of num1+num2. If either addend is invalid, the return variable would be invalid too
+	* @return A binary variable with a value of <i>num1+num2</i>.
 	*/
 	public static Binary add(Binary num1,Binary num2)
 	{
-		//If either addend is invalid, the return variable would be invalid too
-		if((! num1.isGood()) || (! num2.isGood()))
-		{
-			Binary badResult=new Binary("");
-			badResult.Err=true;
-			return badResult;
-		}
 		// the index of the first digit of each number
 		int ind1=num1.number.length()-1;
 		int ind2=num2.number.length()-1;
