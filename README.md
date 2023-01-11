@@ -82,7 +82,7 @@ mvn clean package
 where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file while **com.ontariotechu.sofe3980U.App** is the main class of the project.  
 * To be able to execute the jar file without specifying the main class, update the **pom.xml** file and specify the main class within it. To do this add the following script to the **maven-jar-plugin** tag as shown in the next figure  
 
-```xml
+&nbsp;&nbsp;&nbsp;&nbsp; ```xml
 <configuration>
  	<archive>
  		<manifest>
@@ -93,9 +93,9 @@ where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file
 </configuration> 
 ```  
 
-    **Note:** The final version of pom.xml is given in the GitHub repository.  
+&nbsp;&nbsp;&nbsp;&nbsp;**Note:** The final version of pom.xml is given in the GitHub repository.  
 
-    ![pom.xml update1](images/pom1.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;![pom.xml update1](images/pom1.jpg)  
 
 * Save the file and rebuild the project using  
 ``` cmd
