@@ -122,8 +122,8 @@ The output should look like
 ``` cmd
 mvn site
 ```
-This will execute the site lifecycle to create a summary of the project in a set of HTML files. The HTML files can be accessed by opening the **index.html** file locates in **target/site/** using a browser. It should look like 
- ![first version of documentation](images/site1.jpg)  
+This will execute the site lifecycle to create a summary of the project in a set of HTML files. The HTML files can be accessed by opening the **index.html** file locates in **target/site/** using a browser. It should look like  
+ ![first version of documentation](images/site1.jpg)  too
 •	To use the [Javadoc tool](https://www.oracle.com/ca-en/technical-resources/articles/java/javadoc-tool.html) to generate documentation of your code as well as the project, we have to add the maven-javadoc-plugin to the reporting phase of the development cycle in the pom.xml files. After the end of the build tag, add the following script
 ``` xml
 <reporting>
@@ -136,10 +136,11 @@ This will execute the site lifecycle to create a summary of the project in a set
 	</plugins>
 </reporting>
 ```
-as shown in the figure
+as shown in the figure  
 ![pom.xml update1](images/pom2.jpg)  
 •	Now regenerate the summary again by executing
 mvn site
-A new menu item called Project Reports should appear in the generated index.html file
+A new menu item called Project Reports should appear in the generated index.html file  
  ![second version of documentation](images/site2.jpg)  
-•	Click Project Reports, then Javadoc. Finally, choose Binary and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the add function in the source code and the corresponding generated documentation.
+•	Click Project Reports, then Javadoc. Finally, choose Binary and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the add function in the source code and the corresponding generated documentation.  
+![javadoc tool](images/javadoc.jpg)  
