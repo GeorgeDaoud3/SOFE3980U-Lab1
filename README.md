@@ -215,7 +215,7 @@ Because some of the tests fail, the result should look like
 ![juint test case](images/testErr.jpg)  
 and no jar file will be created.
 * To fix this problem, uncomment lines 33 to 37 in the Binary class file as shown in the figure  
- ![juint test case](images/binaryTest.jpg)  
+ ![juint test case](images/BinaryTest.jpg)  
 Then, rebuild the project and generate the jar files and the summary.
 ``` cmd
 mvn clean package site assembly:single
