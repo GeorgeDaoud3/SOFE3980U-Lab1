@@ -81,6 +81,7 @@ mvn clean package
 ``java -cp target/BinaryCalculator-1.0.0.jar  com.ontariotechu.sofe3980U.App``  
 where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file while **com.ontariotechu.sofe3980U.App** is the main class of the project.  
 * To be able to execute the jar file without specifying the main class, update the **pom.xml** file and specify the main class within it. To do this add the following script to the **maven-jar-plugin** tag as shown in the next figure  
+
 ``` xml
 <configuration>
  	<archive>
