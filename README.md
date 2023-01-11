@@ -3,11 +3,11 @@
 https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
 ## Objective: 
 1. Install Maven in Windows OS.
-2. Be familiar with Maven as a software project management.
-3. Understand how to create, configure and build Maven projects
-4. Be able to automatically generate Documentation of the project
-5. Be able to configure the project to automatically add dependencies to the jar file
-6. Learn how to write and run tests for the project
+2. Be familiar with Maven as a software project management tool.
+3. Understand how to create, configure and build Maven projects.
+4. Be able to automatically generate Documentation of the project.
+5. Be able to configure the project to automatically add dependencies to the jar file.
+6. Learn how to write and run tests a the project.
 ## What’s Maven?
 It’s A tool for building and managing any type of java-based project.
 It also can be used to build projects written in C#, Scala, Ruby, etc. 
@@ -233,3 +233,5 @@ mvn clean package site assembly:single
 ``` 
 Now, you can access the result of the test cases from the summary report.  
 ![third version of documentation](images/site3.jpg)  
+
+#asas
