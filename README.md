@@ -90,8 +90,9 @@ where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file
  		</manifest>
  	</archive>
 </configuration> 
-``` 
-**Note:** The final version of pom.xml is given in the GitHub repository.
+```  
+
+**Note:** The final version of pom.xml is given in the GitHub repository.  
 ![pom.xml update1](images/pom1.jpg)  
 * Save the file and rebuild the project using  
 ``` cmd
