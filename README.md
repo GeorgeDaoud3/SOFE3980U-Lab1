@@ -158,12 +158,15 @@ A new menu item called Project Reports should appear in the generated index.html
 * **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in v2 directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
 ![app.java with org.joda.time library](images/appDep.jpg)  
 * Replace the **App.java** file located at ** src\main\java\com\ontariotechu\sofe3980U\** by the **App.java** from the **v2** directory at the GitHub repository.
-* Rebuild the project and regenerate the documentation by executing
+* Rebuild the project and regenerate the documentation by executing  
+
 ``` cmd
 mvn clean package site
 ```
+
 As the **org.joda.time** library does not exist yet in the project, the build process should fail.
-* To fix this issue, the library should be specified in the **pom.xml** file so that It will be automatically downloaded and included in the project. Thus, add the following script to the pom.xml file within the dependencies tag.
+* To fix this issue, the library should be specified in the **pom.xml** file so that It will be automatically downloaded and included in the project. Thus, add the following script to the pom.xml file within the dependencies tag.  
+
 ``` xml
 <dependency>
 	<groupId>joda-time</groupId>
@@ -171,14 +174,18 @@ As the **org.joda.time** library does not exist yet in the project, the build pr
 	<version>2.9.2</version>
 </dependency>
 ```
+
 Note: If Maven can’t find the libraryin Maven repository, you have also to add the URL of the library repository.
 
-* Save **pom.xml** and rebuild the project.
+* Save **pom.xml** and rebuild the project.  
+
 ``` cmd
 mvn clean package site
 ```
+
 This will generate a jar file without error, but the library will not be included in the jar file. Thus, an exception will be thrown if you tried to run the jar file   
 * To create another version of the jar file in which all dependencies are included, add the **maven-assembly-plugin** that implements the **assembly:single** lifecycle to **pom.xml**.
+
 ``` xml
 <!-- assembly lifecycle, generate jar with dependencies-->
 <plugin>
@@ -195,7 +202,8 @@ This will generate a jar file without error, but the library will not be include
 	  </descriptorRefs>
 	</configuration>
 </plugin>
-```
+```  
+
 ![pom.xml update3](images/pom3.jpg)  
 This will generate a new file with the name that follows the following format **DartifactId-Dversion-jar-with-dependencies.jar**. In this case, the file name would be **BinaryCalculator-1.0.0-jar-with-dependencies.jar**. 
 * To rebuild the project. First, save the **pom.xml** file. Then, execute the following command
