@@ -154,9 +154,9 @@ as shown in the figure
 ```cmd
 mvn site
 ```
-A new menu item called Project Reports should appear in the generated index.html file  
+A new menu item called **Project Reports** should appear in the generated **index.html** file  
 ![second version of documentation](images/site2.jpg)  
-* Click Project Reports, then Javadoc. Finally, choose Binary and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the add function in the source code and the corresponding generated documentation.  
+* Click **Project Reports**, then **Javadoc**. Finally, choose **Binary** and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the **add** function in the source code and the corresponding generated documentation.  
 ![javadoc tool](images/javadoc.jpg)  
 ## Add Dependencies
 * **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in v2 directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
