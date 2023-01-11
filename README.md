@@ -86,3 +86,17 @@ where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file
 ``mvn clean package``
 * Now, the main class is specified within the jar file. To execute the project, you should only run the jar file using the following command  
 ``java -jar target/BinaryCalculator-1.0.0.jar``
+
+## Adding Source files to the project
+* Copy the files from folder **v1** from the GitHub repository to the path ** src\main\java\com\ontariotechu\sofe3980U\** . 
+The **Binary.java** file contains a Binary class that stores the binary value as a string. The class has three functions
+    1.	Constructor that takes a string of the binary value
+    2.	A getValue() function that returns the value of the binary variable
+    3.	A static add() function that adds two binary variables and returns the result as a binary value.
+The second file is an upgrade to the **App.java** file in which two binary variables are created then their summation is calculated and printed.
+* By putting the files in the **src** folder, they will be automatically added to the project and will be compiled. Rebuild the project using the following command    
+``mvn clean package``
+* As the main class remains the same, no changes are needed to be done to the pom.xml file. Now, run the upgraded project  
+``java -jar target/BinaryCalculator-1.0.0.jar``
+The output should look like  
+![output of v1](images/out1.jpg)  
