@@ -34,8 +34,8 @@ development tasks in the project like:
     echo %JAVA_HOME%
     ```
     It should display the JDK path
-* Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompress it to a certain folder
-*  this path to the path
+* Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompress it to a certain folder.
+* Add the Maven path to the system path
     1.	Go to the **Environment variables** for the user as you did before.
     2.	Find an existing **Path** Variable. Then click **edit**.
     3.	Add a new record of the path of the **bin** folder within the **Maven** folder. (the path would like different than that shown in the figure)  
