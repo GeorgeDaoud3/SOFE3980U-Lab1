@@ -1,8 +1,9 @@
 # Lab 1: software project management and comprehension tool (Apache Maven)
 
 ## Objective: 
-1. Be familiar with Maven as a software project management.
-2.
+1. Install Maven in Windows OS.
+2. Be familiar with Maven as a software project management.
+3. Understand hoe to create and configure Maven projects
 
 ## What’s Maven?
 It’s A tool for building and managing any type of java-based projects.
@@ -28,9 +29,14 @@ development tasks in the project like:
     6.	To check it, open a new command window and execute  
     ``echo %JAVA_HOME%``  
     It should display the JDK path
-* Download the Binary zip archive format of Maven then uncompressing it to a certain folder
+* Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompressing it to a certain folder
 *  this path to the path
     1.	Go to the **Environment variables** for the user as you did before.
     2.	Find an existing **Path** Variable. Then click **edit**.
     3.	Add a new record of the path of the **bin** folder within **Maven** folder. (the path would like different than that shown in the figure)
     ![Path environment variable](images/path.jpg)
+ * Check the correct Installation, by running the following command in a new command window (Note any change in the user variables will effect only new command windows)  
+``mvn -v``  
+It should display an output similar to
+
+
