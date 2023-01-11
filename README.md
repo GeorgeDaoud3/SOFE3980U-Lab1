@@ -27,8 +27,8 @@ development tasks in the project like:
     2.	In the Settings window, under** Related Settings**, click **Advanced system settings…** .
     3.	On the **Advanced** tab, click **Environment Variables…** .
     4.	Click **New** to create a new environment variable for the current user.
-    5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.
-    ![JAVA_HOME environment variable](images/envVar.jpg)
+    5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.  
+    ![JAVA_HOME environment variable](images/envVar.jpg)  
     6.	To check it, open a new command window and execute  
     ``` cmd
     echo %JAVA_HOME%
