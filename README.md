@@ -236,18 +236,21 @@ Then, rebuild the project and generate the jar files and the summary.
 mvn clean package site assembly:single
 ```
 * Finally, to include the test results in the summary, we have to add a **maven-surefire-report-plugin**  to the report dependencies. This is done using the following script
+
 ``` xml
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-surefire-report-plugin</artifactId>
 	<version>3.0.0-M7</version>
 </plugin>
- ```
- ![pom.xml update4](images/pom4.jpg)  
-* Then, rebuild the project and generate the jar files and the summary.
+ ```  
+ 
+![pom.xml update4](images/pom4.jpg)  
+* Then, rebuild the project and generate the jar files and the summary.  
+
 ``` cmd
 mvn clean package site assembly:single
-``` 
+```  
 Now, you can access the result of the test cases from the summary report.  
 ![third version of documentation](images/site3.jpg)  
 
