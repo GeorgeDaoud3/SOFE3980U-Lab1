@@ -170,7 +170,7 @@ mvn clean package site
 This will generate a jar file without error, but the library will not be included in the jar file. Thus, an exception will be thrown if you tried to run the jar file   
 * To create another version of the jar file in which all dependencies are included, add the **maven-assembly-plugin** that implements the **assembly:single** lifecycle to **pom.xml**.
 ``` xml
-<!-- assembly lifecycle, generate jar with dependecies-->
+<!-- assembly lifecycle, generate jar with dependencies-->
 <plugin>
 	<artifactId>maven-assembly-plugin</artifactId>
 	<configuration>
@@ -196,5 +196,5 @@ mvn clean package site assembly:single
 ``` cmd
 java -jar target/BinaryCalculator-1.0.0-jar-with-dependencies.jar
 ```
-The output should look like:
+The output should look like:  
 ![second version of the output](images/out2.jpg)  
