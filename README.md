@@ -261,7 +261,7 @@ It's required from your team to
     * **AND**: bitwise logical AND  
     * **Multiply**: multiply two binary variables (**Note**: you may use the Add function)
 2. Update the App.java file to call the new three functions. You may update it to be more interactive and user friendly.
-3. Add three test functions at least for each of the new function in the Binary class
+3. Add three test functions at least for each of new function added into the Binary class
 
 # Deliverables:
 1. A GitHub link includes the whole project folder (except the target folder) with the final version of the binary class and the test cases.
