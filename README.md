@@ -40,17 +40,20 @@ development tasks in the project like:
 It should display an output similar to  
 ![Maven version](images/mvnVer.jpg)
 ## Creating a project
-* Create a new folder for the project (Note, I’ll refer to it as projects_root)
-* Within a command window, change the directory to that folder (replace projects_root with the actual path of the folder)  
-``cd projects_root``
-* Create a new project using the following command
-```mvn archetype:generate^
-        -DgroupId=com.ontariotechu.sofe3980U ^
-        -DartifactId=BinaryCalculator^
-        -Dversion=1.0.0^
-        -DarchetypeArtifactId=maven-archetype-quickstart^
-        -DarchetypeVersion=1.4^
-        -DinteractiveMode=false```  
-This is a multiline single command. Appending each line by ^ indicates that the command is not ended, and it will be extended to the next line. archetype:generate specify that the command will generate a new project. maven-archetype-quickstart and 1.4 are template type and template version, respectively, that will be used to create the project. While DgroupId, DartifactId, and Dversion are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.
+* Within a command window, change the directory to the folder in which you want to create the project (replace **projects_root** with the actual path of the folder)  
+``cd <projects_root>``
+* Create a new project using the following command  
+```
+mvn archetype:generate^
+    -DgroupId=com.ontariotechu.sofe3980U ^
+    -DartifactId=BinaryCalculator^
+    -Dversion=1.0.0^
+    -DarchetypeArtifactId=maven-archetype-quickstart^
+    -DarchetypeVersion=1.4^
+    -DinteractiveMode=false  
+```
 
+&nbsp;&nbsp;&nbsp;&nbsp;This is a multiline single command. Appending each line by **^** indicates that the command is not ended, and it will be extended to the next line. **archetype:generate** specify that the command will generate a new project. **maven-archetype-quickstart** and **1.4** are template type and template version, respectively, that will be used to create the project. While **DgroupId**, **DartifactId**, and **Dversion** are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.  
+&nbsp;&nbsp;&nbsp;&nbsp; The command will create a folder with the same name as the project (**BinaryCalculator**). Within the project folder, a Project Object Model (POM) file (**pom.xml**) is created that contains a configuration script that controls the development cycle of the project. Also, a folder called **src** is created that contains two sub-directories, **main** for the source code and **test** for the testing code. The sub-folder names within both the main and test folders follow the **DgroupId** argument used to generate the project as shown in the following figure.
+![Maven Project Structure](images/treePro.jpg)
 
