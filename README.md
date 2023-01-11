@@ -159,9 +159,9 @@ A new menu item called **Project Reports** should appear in the generated **inde
 * Click **Project Reports**, then **Javadoc**. Finally, choose **Binary** and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the **add** function in the source code and the corresponding generated documentation.  
 ![javadoc tool](images/javadoc.jpg)  
 ## Add Dependencies
-* **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in v2 directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
+* **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in **v2** directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
 ![app.java with org.joda.time library](images/appDep.jpg)  
-* Replace the **App.java** file located at ** src\main\java\com\ontariotechu\sofe3980U\** by the **App.java** from the **v2** directory at the GitHub repository.
+* Replace the **App.java** file located at **src/main/java/com/ontariotechu/sofe3980U/** by the **App.java** from the **v2** directory at the GitHub repository.
 * Rebuild the project and regenerate the documentation by executing  
 
 ``` cmd
