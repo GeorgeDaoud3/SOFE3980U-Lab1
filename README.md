@@ -111,7 +111,7 @@ java -jar target/BinaryCalculator-1.0.0.jar
 ```
 
 ## Adding Source files to the project
-* Copy the files from folder **v1** from the GitHub repository to the path **src\main\java\com\ontariotechu\sofe3980U\** . 
+* Copy the files from folder **v1** from the GitHub repository to the path **src/main/java/com/ontariotechu/sofe3980U/** . 
 The **Binary.java** file contains a Binary class that stores the binary value as a string. The class has three functions
     1.	Constructor that takes a string of the binary value
     2.	A getValue() function that returns the value of the binary variable
