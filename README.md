@@ -40,7 +40,7 @@ development tasks in the project like:
     2.	Find an existing **Path** Variable. Then click **edit**.
     3.	Add a new record of the path of the **bin** folder within the **Maven** folder. (the path would like different than that shown in the figure)  
     ![Path environment variable](images/path.jpg)  
- * Check the correct Installation, by running the following command in a new command window (Note any change in the user variables will effect only new command windows)  
+* Check the correct Installation, by running the following command in a new command window (Note any change in the user variables will effect only new command windows)  
 ``` cmd
 mvn -v
 ```
