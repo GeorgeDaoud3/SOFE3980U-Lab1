@@ -236,9 +236,9 @@ Now, you can access the result of the test cases from the summary report.
 
 # Design: 
 It's required from your team to
-1. Add three functions to the **Binary** class that perform the following operations over two binary variables. The output of the function should be also a binary function:
-    * **OR**: bitwise or
-    * **AND**: bitwise and
+1. Add three functions to the **Binary** class that perform the following operations over two binary variables. The output of the function should be also a binary function:  
+    * **OR**: bitwise logical OR
+    * **AND**: bitwise logical AND  
     * **Multiply**: multiply two binary variables (**Note**: you may use the Add function)
 2. Update the App.java file to call the new three functions. You may update it to be more interactive and user friendly.
 3. Add three test functions at least for each of the new function in the Binary class
