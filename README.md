@@ -28,7 +28,9 @@ development tasks in the project like:
     5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.
     ![JAVA_HOME environment variable](images/envVar.jpg)
     6.	To check it, open a new command window and execute  
-    ``echo %JAVA_HOME%``  
+    ``` cmd
+    echo %JAVA_HOME%
+    ```
     It should display the JDK path
 * Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompress it to a certain folder
 *  this path to the path
@@ -37,14 +39,18 @@ development tasks in the project like:
     3.	Add a new record of the path of the **bin** folder within the **Maven** folder. (the path would like different than that shown in the figure)
     ![Path environment variable](images/path.jpg)
  * Check the correct Installation, by running the following command in a new command window (Note any change in the user variables will effect only new command windows)  
-``mvn -v``  
+``` cmd
+mvn -v
+```
 It should display an output similar to  
 ![Maven version](images/mvnVer.jpg)
 ## Creating a project
 * Within a command window, change the directory to the folder in which you want to create the project (replace **projects_root** with the actual path of the folder)  
-``cd <projects_root>``
-* Create a new project using the following command  
+``` cmd
+cd <projects_root>
 ```
+* Create a new project using the following command  
+``` cmd
 mvn archetype:generate^
     -DgroupId=com.ontariotechu.sofe3980U ^
     -DartifactId=BinaryCalculator^
@@ -53,7 +59,6 @@ mvn archetype:generate^
     -DarchetypeVersion=1.4^
     -DinteractiveMode=false  
 ```
-
 &nbsp;&nbsp;&nbsp;&nbsp;This is a multiline single command. Appending each line by **^** indicates that the command is not ended, and it will be extended to the next line. **archetype:generate** specify that the command will generate a new project. **maven-archetype-quickstart** and **1.4** are template type and template version, respectively, that will be used to create the project. While **DgroupId**, **DartifactId**, and **Dversion** are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.  
 &nbsp;&nbsp;&nbsp;&nbsp; The command will create a folder with the same name as the project (**BinaryCalculator**). Within the project folder, a Project Object Model (POM) file (**pom.xml**) is created that contains a configuration script that controls the development cycle of the project. Also, a folder called **src** is created that contains two sub-directories, **main** for the source code and **test** for the testing code. The sub-folder names within both the main and test folders follow the **DgroupId** argument used to generate the project as shown in the following figure.  
 ![Maven Project Structure](images/treePro.jpg)  
@@ -61,9 +66,13 @@ mvn archetype:generate^
  ![Maven Project Structure](images/appJava.jpg)  
 ## Building the project:
 * Change the directory to the path of the pom.xml file  
-``cd BinaryCalculator``  
+``` cmd 
+cd BinaryCalculator
+```
 * Run the following command  
-``mvn clean package``  
+``` cmd
+mvn clean package
+```
 &nbsp;&nbsp;&nbsp;&nbsp; the first argument (**clean**) will remove any previously generated output while the **package** argument will rebuild the project and produce a jar file for the whole project. During the packaging process, the tests will be executed. All tests should be passed to complete the building process. All outputs including the jar file will be saved at the path (**BinaryCalculator\target**). The name of the built jar file will follow the pattern **DartifactId-Dversion.jar**. Thus it should be **BinaryCalculator-1.0.0.jar** for this project.
 ## Running the project
 * Running the project using the jar file has many advantages especially if your project consists of multi-files and has dependencies that needed to be downloaded and added to the project. To run the project, invoke the following command within the command window (assuming the current directory is still BinaryCalculator)  
@@ -83,9 +92,13 @@ where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file
 **Note:** The final version of pom.xml is given in the GitHub repository.
 ![pom.xml update1](images/pom1.jpg)  
 * Save the file and rebuild the project using  
-``mvn clean package``
+``` cmd
+mvn clean package
+```
 * Now, the main class is specified within the jar file. To execute the project, you should only run the jar file using the following command  
-``java -jar target/BinaryCalculator-1.0.0.jar``
+``` cmd
+java -jar target/BinaryCalculator-1.0.0.jar
+```
 
 ## Adding Source files to the project
 * Copy the files from folder **v1** from the GitHub repository to the path ** src\main\java\com\ontariotechu\sofe3980U\** . 
@@ -95,8 +108,38 @@ The **Binary.java** file contains a Binary class that stores the binary value as
     3.	A static add() function that adds two binary variables and returns the result as a binary value.
 The second file is an upgrade to the **App.java** file in which two binary variables are created then their summation is calculated and printed.
 * By putting the files in the **src** folder, they will be automatically added to the project and will be compiled. Rebuild the project using the following command    
-``mvn clean package``
+``` cmd
+mvn clean package
+```
 * As the main class remains the same, no changes are needed to be done to the pom.xml file. Now, run the upgraded project  
-``java -jar target/BinaryCalculator-1.0.0.jar``
+``` cmd
+java -jar target/BinaryCalculator-1.0.0.jar
+```
 The output should look like  
 ![output of v1](images/out1.jpg)  
+## Generate Documentation for the project
+* To Generate documentation of the project, execute the following command  
+``` cmd
+mvn site
+```
+This will execute the site lifecycle to create a summary of the project in a set of HTML files. The HTML files can be accessed by opening the **index.html** file locates in **target/site/** using a browser. It should look like 
+ ![first version of documentation](images/site1.jpg)  
+•	To use the [Javadoc tool](https://www.oracle.com/ca-en/technical-resources/articles/java/javadoc-tool.html) to generate documentation of your code as well as the project, we have to add the maven-javadoc-plugin to the reporting phase of the development cycle in the pom.xml files. After the end of the build tag, add the following script
+``` xml
+<reporting>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.4.1</version>
+		</plugin>
+	</plugins>
+</reporting>
+```
+as shown in the figure
+![pom.xml update1](images/pom2.jpg)  
+•	Now regenerate the summary again by executing
+mvn site
+A new menu item called Project Reports should appear in the generated index.html file
+ ![second version of documentation](images/site2.jpg)  
+•	Click Project Reports, then Javadoc. Finally, choose Binary and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the add function in the source code and the corresponding generated documentation.
