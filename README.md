@@ -202,18 +202,18 @@ The output should look like:
 ![second version of the output](images/out2.jpg)  
 
 ## Add Test cases
-* Maven already generated a test case for the App class. Open the file **src\test\java\com\ontariotechu\sofe3980U\AppTest.java**. It contains a single test case that always passes
-![juint test case](images/appTest.jpg) 
+* Maven already generated a test case for the App class. Open the file **src\test\java\com\ontariotechu\sofe3980U\AppTest.java**. It contains a single test case that always passes  
+![juint test case](images/appTest.jpg)  
 The **@Test** annotation is used to mark test cases while the condition sent to the **assertTrue** function as an argument determines the success or failure of the test case. Other functions that can be used are shown in the [documentation of the Assert class](https://junit.org/junit4/javadoc/4.13/org/junit/Assert.html).
 * Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**\src\test\java\com\ontariotechu\sofe3980U**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. Try to build the project using any proper lifecycle as
 ``` cmd
 mvn clean package
 ```
-Because some of the tests fail, the result should look like
-![juint test case](images/testErr.jpg) 
+Because some of the tests fail, the result should look like  
+![juint test case](images/testErr.jpg)  
 and no jar file will be created.
-* To fix this problem, uncomment lines 33 to 37 in the Binary class file as shown in the figure
- ![juint test case](images/binaryTest.jpg) 
+* To fix this problem, uncomment lines 33 to 37 in the Binary class file as shown in the figure  
+ ![juint test case](images/binaryTest.jpg)  
 Then, rebuild the project and generate the jar files and the summary.
 ``` cmd
 mvn clean package site assembly:single
@@ -234,4 +234,16 @@ mvn clean package site assembly:single
 Now, you can access the result of the test cases from the summary report.  
 ![third version of documentation](images/site3.jpg)  
 
-#asas
+# Design: 
+It's required from your team to
+1. Add three functions to the **Binary** class that perform the following operations over two binary variables. The output of the function should be also a binary function:
+    * **OR**: bitwise or
+    * **AND**: bitwise and
+    * **Multiply**: multiply two binary variables (**Note**: you may use the Add function)
+2. Update the App.java file to call the new three functions. You may update it to be more interactive and user friendly.
+3. Add three test functions at least for each of the new function in the Binary class
+
+# Deliverables:
+1. A GitHub link includes the whole project folder (except the target folder) with the final version of the binary class and the test cases.
+2. A report discussing the source and testing code of the design part.
+3. Audible video of about 3 minutes showing the building and running phases of the project as well as the passed tests. Also, show the generated documentation for the functions you added in the design section. 
