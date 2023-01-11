@@ -1,4 +1,4 @@
-# Lab 1: software project management and comprehension tool (Apache Maven)
+# Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
 ## repostory link
 
 ## Objective: 
@@ -63,5 +63,5 @@ mvn archetype:generate^
 * Change the directory to the path of the pom.xml file  
 ``cd BinaryCalculator``  
 * Run the following command  
-``mvn clean package``
+``mvn clean package``  
 &nbsp;&nbsp;&nbsp;&nbsp; the first argument (**clean**) will remove any previously generated output while the **package** argument will rebuild the project and produce a jar file for the whole project. During the packaging process, the tests will be executed. All tests should be passed to complete the building process. All outputs including the jar file will be saved at the path (**BinaryCalculator\target**). The name of the built jar file will follow the pattern **DartifactId-Dversion.jar**. Thus it should be **BinaryCalculator-1.0.0.jar** for this project.
