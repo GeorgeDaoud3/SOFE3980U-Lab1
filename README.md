@@ -37,6 +37,20 @@ development tasks in the project like:
     ![Path environment variable](images/path.jpg)
  * Check the correct Installation, by running the following command in a new command window (Note any change in the user variables will effect only new command windows)  
 ``mvn -v``  
-It should display an output similar to
+It should display an output similar to  
 ![Maven version](images/mvnVer.jpg)
+## Creating a project
+* Create a new folder for the project (Note, I’ll refer to it as projects_root)
+* Within a command window, change the directory to that folder (replace projects_root with the actual path of the folder)  
+``cd projects_root``
+* Create a new project using the following command
+```mvn archetype:generate^
+        -DgroupId=com.ontariotechu.sofe3980U ^
+        -DartifactId=BinaryCalculator^
+        -Dversion=1.0.0^
+        -DarchetypeArtifactId=maven-archetype-quickstart^
+        -DarchetypeVersion=1.4^
+        -DinteractiveMode=false```  
+This is a multiline single command. Appending each line by ^ indicates that the command is not ended, and it will be extended to the next line. archetype:generate specify that the command will generate a new project. maven-archetype-quickstart and 1.4 are template type and template version, respectively, that will be used to create the project. While DgroupId, DartifactId, and Dversion are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.
+
 
