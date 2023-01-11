@@ -5,7 +5,9 @@ https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
 1. Install Maven in Windows OS.
 2. Be familiar with Maven as a software project management.
 3. Understand how to create, configure and build Maven projects
-
+4. Be able to automatically generate Documentation of the project
+5. Be able to configure the project to automatically add dependencies to the jar file
+6. Learn how to write and run tests for the project
 ## What’s Maven?
 It’s A tool for building and managing any type of java-based project.
 It also can be used to build projects written in C#, Scala, Ruby, etc. 
@@ -198,3 +200,36 @@ java -jar target/BinaryCalculator-1.0.0-jar-with-dependencies.jar
 ```
 The output should look like:  
 ![second version of the output](images/out2.jpg)  
+
+## Add Test cases
+* Maven already generated a test case for the App class. Open the file **src\test\java\com\ontariotechu\sofe3980U\AppTest.java**. It contains a single test case that always passes
+![juint test case](images/appTest.jpg) 
+The **@Test** annotation is used to mark test cases while the condition sent to the **assertTrue** function as an argument determines the success or failure of the test case. Other functions that can be used are shown in the [documentation of the Assert class](https://junit.org/junit4/javadoc/4.13/org/junit/Assert.html).
+* Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**\src\test\java\com\ontariotechu\sofe3980U**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. Try to build the project using any proper lifecycle as
+``` cmd
+mvn clean package
+```
+Because some of the tests fail, the result should look like
+![juint test case](images/testErr.jpg) 
+and no jar file will be created.
+* To fix this problem, uncomment lines 33 to 37 in the Binary class file as shown in the figure
+ ![juint test case](images/binaryTest.jpg) 
+Then, rebuild the project and generate the jar files and the summary.
+``` cmd
+mvn clean package site assembly:single
+```
+* Finally, to include the test results in the summary, we have to add a **maven-surefire-report-plugin**  to the report dependencies. This is done using the following script
+``` xml
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-surefire-report-plugin</artifactId>
+	<version>3.0.0-M7</version>
+</plugin>
+ ```
+ ![pom.xml update4](images/pom4.jpg)  
+* Then, rebuild the project and generate the jar files and the summary.
+``` cmd
+mvn clean package site assembly:single
+``` 
+Now, you can access the result of the test cases from the summary report.  
+![third version of documentation](images/site3.jpg)  
