@@ -1,9 +1,10 @@
 # Lab 1: software project management and comprehension tool (Apache Maven)
+## repostory link
 
 ## Objective: 
 1. Install Maven in Windows OS.
 2. Be familiar with Maven as a software project management.
-3. Understand hoe to create and configure Maven projects
+3. Understand how to create, configure and build Maven projects
 
 ## What’s Maven?
 It’s A tool for building and managing any type of java-based project.
