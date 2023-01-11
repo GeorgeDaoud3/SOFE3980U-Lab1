@@ -207,7 +207,8 @@ The output should look like:
 * Maven already generated a test case for the App class. Open the file **src\test\java\com\ontariotechu\sofe3980U\AppTest.java**. It contains a single test case that always passes  
 ![juint test case](images/appTest.jpg)  
 The **@Test** annotation is used to mark test cases while the condition sent to the **assertTrue** function as an argument determines the success or failure of the test case. Other functions that can be used are shown in the [documentation of the Assert class](https://junit.org/junit4/javadoc/4.13/org/junit/Assert.html).
-* Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**\src\test\java\com\ontariotechu\sofe3980U**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. Try to build the project using any proper lifecycle as
+* Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**\src\test\java\com\ontariotechu\sofe3980U**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. **Read and understand the given test cases.**  
+* Try to build the project using any proper lifecycle as
 ``` cmd
 mvn clean package
 ```
