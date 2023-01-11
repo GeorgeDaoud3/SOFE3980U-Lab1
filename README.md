@@ -24,7 +24,7 @@ development tasks in the project like:
 * Have a JDK installed on your system. It should satisfy [the minimum requirement](https://maven.apache.org/download.cgi#system-requirements). 
 * Set the **JAVA_HOME** environment variable pointing to your JDK installation. 
     1.	On the Windows taskbar, right-click the **Windows icon** and select **System**.
-    2.	In the Settings window, under** Related Settings**, click **Advanced system settings…** .
+    2.	In the Settings window, under **Related Settings**, click **Advanced system settings…** .
     3.	On the **Advanced** tab, click **Environment Variables…** .
     4.	Click **New** to create a new environment variable for the current user.
     5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.  
