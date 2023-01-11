@@ -133,7 +133,9 @@ The output should look like
 mvn site
 ```
 This will execute the site lifecycle to create a summary of the project in a set of HTML files. The HTML files can be accessed by opening the **index.html** file locates in **target/site/** using a browser. It should look like  
+
  ![first version of documentation](images/site1.jpg)  
+
 * To use the [Javadoc tool](https://www.oracle.com/ca-en/technical-resources/articles/java/javadoc-tool.html) to generate documentation of your code as well as the project, we have to add the maven-javadoc-plugin to the reporting phase of the development cycle in the pom.xml files. After the end of the build tag, add the following script  
 
 ``` xml
