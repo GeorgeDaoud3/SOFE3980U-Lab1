@@ -22,9 +22,9 @@ development tasks in the project like:
 * Mailing list
 ## Maven Installation
 * Have a JDK installed on your system. It should satisfy [the minimum requirement](https://maven.apache.org/download.cgi#system-requirements). 
-*	set the **JAVA_HOME** environment variable pointing to your JDK installation. 
+* Set the **JAVA_HOME** environment variable pointing to your JDK installation. 
     1.	On the Windows taskbar, right-click the **Windows icon** and select **System**.
-    2.	In the Settings window, under** Related Settings**, click **Advanced system settings…** .
+    2.	In the Settings window, under **Related Settings**, click **Advanced system settings…** .
     3.	On the **Advanced** tab, click **Environment Variables…** .
     4.	Click **New** to create a new environment variable for the current user.
     5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.  
@@ -34,8 +34,8 @@ development tasks in the project like:
     echo %JAVA_HOME%
     ```
     It should display the JDK path
-* Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompress it to a certain folder
-*  this path to the path
+* Download the **Binary zip archive** format of [Maven](https://maven.apache.org/download.cgi#files) then uncompress it to a certain folder.
+* Add the Maven path to the system path
     1.	Go to the **Environment variables** for the user as you did before.
     2.	Find an existing **Path** Variable. Then click **edit**.
     3.	Add a new record of the path of the **bin** folder within the **Maven** folder. (the path would like different than that shown in the figure)  
@@ -61,7 +61,7 @@ mvn archetype:generate^
     -DarchetypeVersion=1.4^
     -DinteractiveMode=false  
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;This is a multiline single command. Appending each line by **^** indicates that the command is not ended, and it will be extended to the next line. **archetype:generate** specify that the command will generate a new project. **maven-archetype-quickstart** and **1.4** are template type and template version, respectively, that will be used to create the project. While **DgroupId**, **DartifactId**, and **Dversion** are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.  
+&nbsp;&nbsp;&nbsp;&nbsp;This is a multiline single command. Appending each line by **^** indicates that the command is not ended, and it will be extended to the next line. **archetype:generate** specify that the command will generate a new project. **maven-archetype-quickstart** and **1.4** are template type and template version, respectively. The specified template will be used to create the project. While **DgroupId**, **DartifactId**, and **Dversion** are the group id, project name, and project version, respectively. Group id is a unique Identification for different projects within an organization.  
 &nbsp;&nbsp;&nbsp;&nbsp; The command will create a folder with the same name as the project (**BinaryCalculator**). Within the project folder, a Project Object Model (POM) file (**pom.xml**) is created that contains a configuration script that controls the development cycle of the project. Also, a folder called **src** is created that contains two sub-directories, **main** for the source code and **test** for the testing code. The sub-folder names within both the main and test folders follow the **DgroupId** argument used to generate the project as shown in the following figure.  
 ![Maven Project Structure](images/treePro.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp; A default HelloWorld java App will be created for you (**App.java**) as well as a default test file (**AppTest.java**). You can edit the files using any text editor. The content of the App.java file should look like this:  
@@ -78,7 +78,11 @@ mvn clean package
 &nbsp;&nbsp;&nbsp;&nbsp; the first argument (**clean**) will remove any previously generated output while the **package** argument will rebuild the project and produce a jar file for the whole project. During the packaging process, the tests will be executed. All tests should be passed to complete the building process. All outputs including the jar file will be saved at the path (**BinaryCalculator\target**). The name of the built jar file will follow the pattern **DartifactId-Dversion.jar**. Thus it should be **BinaryCalculator-1.0.0.jar** for this project.
 ## Running the project
 * Running the project using the jar file has many advantages especially if your project consists of multi-files and has dependencies that needed to be downloaded and added to the project. To run the project, invoke the following command within the command window (assuming the current directory is still BinaryCalculator)  
-``java -cp target/BinaryCalculator-1.0.0.jar  com.ontariotechu.sofe3980U.App``  
+
+``` cmd
+java -cp target/BinaryCalculator-1.0.0.jar  com.ontariotechu.sofe3980U.App
+```  
+
 where **target/BinaryCalculator-1.0.0.jar** is the relative path of the jar file while **com.ontariotechu.sofe3980U.App** is the main class of the project.  
 * To be able to execute the jar file without specifying the main class, update the **pom.xml** file and specify the main class within it. To do this add the following script to the **maven-jar-plugin** tag as shown in the next figure  
 
@@ -107,11 +111,11 @@ java -jar target/BinaryCalculator-1.0.0.jar
 ```
 
 ## Adding Source files to the project
-* Copy the files from folder **v1** from the GitHub repository to the path ** src\main\java\com\ontariotechu\sofe3980U\** . 
+* Copy the files from folder **v1** from the GitHub repository to the path **src/main/java/com/ontariotechu/sofe3980U/** . 
 The **Binary.java** file contains a Binary class that stores the binary value as a string. The class has three functions
-    1.	Constructor that takes a string of the binary value
-    2.	A getValue() function that returns the value of the binary variable
-    3.	A static add() function that adds two binary variables and returns the result as a binary value.
+    1.	A **Constructor** that takes a string of the binary value
+    2.	A **getValue()** function that returns the value of the binary variable
+    3.	A static **add()** function that adds two binary variables and returns the result as a binary value.
 The second file is an upgrade to the **App.java** file in which two binary variables are created then their summation is calculated and printed.
 * By putting the files in the **src** folder, they will be automatically added to the project and will be compiled. Rebuild the project using the following command    
 ``` cmd
@@ -129,7 +133,9 @@ The output should look like
 mvn site
 ```
 This will execute the site lifecycle to create a summary of the project in a set of HTML files. The HTML files can be accessed by opening the **index.html** file locates in **target/site/** using a browser. It should look like  
+
  ![first version of documentation](images/site1.jpg)  
+
 * To use the [Javadoc tool](https://www.oracle.com/ca-en/technical-resources/articles/java/javadoc-tool.html) to generate documentation of your code as well as the project, we have to add the maven-javadoc-plugin to the reporting phase of the development cycle in the pom.xml files. After the end of the build tag, add the following script  
 
 ``` xml
@@ -150,14 +156,14 @@ as shown in the figure
 ```cmd
 mvn site
 ```
-A new menu item called Project Reports should appear in the generated index.html file  
+A new menu item called **Project Reports** should appear in the generated **index.html** file  
 ![second version of documentation](images/site2.jpg)  
-* Click Project Reports, then Javadoc. Finally, choose Binary and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the add function in the source code and the corresponding generated documentation.  
+* Click **Project Reports**, then **Javadoc**. Finally, choose **Binary** and explore the generated document. Note that that document is generated according to the comments in the source code. For example, in the following figure shows both the Javadoc comment of the **add** function in the source code and the corresponding generated documentation.  
 ![javadoc tool](images/javadoc.jpg)  
 ## Add Dependencies
-* **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in v2 directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
+* **org.joda.time** provides a better representation of time than the standard date and time java classes. The **App.java** file in **v2** directory in the GitHub repository uses this library to print the local file at the begining of the main function.  
 ![app.java with org.joda.time library](images/appDep.jpg)  
-* Replace the **App.java** file located at ** src\main\java\com\ontariotechu\sofe3980U\** by the **App.java** from the **v2** directory at the GitHub repository.
+* Replace the **App.java** file located at **src/main/java/com/ontariotechu/sofe3980U/** by the **App.java** from the **v2** directory at the GitHub repository.
 * Rebuild the project and regenerate the documentation by executing  
 
 ``` cmd
@@ -218,10 +224,10 @@ The output should look like:
 ![second version of the output](images/out2.jpg)  
 
 ## Add Test cases
-* Maven already generated a test case for the App class. Open the file **src\test\java\com\ontariotechu\sofe3980U\AppTest.java**. It contains a single test case that always passes  
+* Maven already generated a test case for the App class. Open the file **src/test/java/com/ontariotechu/sofe3980U/AppTest.java**. It contains a single test case that always passes  
 ![juint test case](images/appTest.jpg)  
 The **@Test** annotation is used to mark test cases while the condition sent to the **assertTrue** function as an argument determines the success or failure of the test case. Other functions that can be used are shown in the [documentation of the Assert class](https://junit.org/junit4/javadoc/4.13/org/junit/Assert.html).
-* Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**\src\test\java\com\ontariotechu\sofe3980U**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. **Read and understand the given test cases.**  
+* Copy the file **BinaryTest.java** from folder **v3** at the GitHub repository to the testing path (**src/test/java/com/ontariotechu/sofe3980U/**). That’s the path that will be reached by Maven to run the tests for you. If all tests pass, the jar file will be created. For demonstration reasons, not all tests will pass successfully. The test files contain 11 tests for the functions in the Binary class that try most of the possible scenarios. **Read and understand the given test cases.**  
 * Try to build the project using any proper lifecycle as
 ``` cmd
 mvn clean package
@@ -229,7 +235,7 @@ mvn clean package
 Because some of the tests fail, the result should look like  
 ![juint test case](images/testErr.jpg)  
 and no jar file will be created.
-* To fix this problem, uncomment lines 33 to 37 in the Binary class file as shown in the figure  
+* To fix this problem, uncomment lines 33 to 37 in the Binary class file (**Binary.java**)as shown in the figure  
  ![juint test case](images/BinaryTest.jpg)  
 Then, rebuild the project and generate the jar files and the summary.
 ``` cmd
