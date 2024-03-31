@@ -1,4 +1,4 @@
-# Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
+# MS 1: Software Project Management and Comprehension Tool (Apache Maven)
 ## repostory link
 https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
 ## Objective: 
